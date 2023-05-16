@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/"
+     xml:base="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:blackEyedPeas="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas">
+        <rdfs:comment>This ontology covers the Black Eyed Peas musical group.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#isMemberOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#wasMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#wasMemberOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#workedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#workedWith">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/hasActiveMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/hasActiveMember">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/hasAlbum -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/hasAlbum">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/produced"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/madeBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/hasFormerMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/hasFormerMember">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/madeBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/madeBy">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/producedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/madeBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/produced -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/produced">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/producedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/producedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/producedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/producedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/activeSince -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/activeSince">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1995</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2023</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/activeUntil -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/activeUntil">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1995</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2023</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/birthdate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/birthdate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/creation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/creation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/gender">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Female</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Male</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/genre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/genre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Electronic</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Funk / Soul</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Hip hop</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Latin</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Pop</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/isFounder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/isFounder">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/origin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/origin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/releaseYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/releaseYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1995</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2050</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/role">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>DJ</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>bass</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>drums</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>guitar</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>piano</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>synthesizer</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>vocals</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Artist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/AMRecords -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/AMRecords">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/EpicRecords"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <blackEyedPeas:workedWith rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elephunk"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MonkeyBusiness"/>
+        <name>A&amp;M Records</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Apl.de.ap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Apl.de.ap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist"/>
+        <blackEyedPeas:isMemberOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <activeSince rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1995</activeSince>
+        <birthdate>28.07.1974</birthdate>
+        <gender>Male</gender>
+        <isFounder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isFounder>
+        <name>Allen Pineda Lindo</name>
+        <role>drums</role>
+        <role>vocals</role>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BehindTheFront -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BehindTheFront">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <genre>Hip hop</genre>
+        <name>Behind the Front</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1998</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Band"/>
+        <blackEyedPeas:workedWith rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/AMRecords"/>
+        <blackEyedPeas:workedWith rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/EpicRecords"/>
+        <blackEyedPeas:workedWith rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <hasActiveMember rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Apl.de.ap"/>
+        <hasActiveMember rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/J.ReySoul"/>
+        <hasActiveMember rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Taboo"/>
+        <hasActiveMember rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Will.i.am"/>
+        <hasFormerMember rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie"/>
+        <hasFormerMember rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/KimHill"/>
+        <name>Black Eyed Peas</name>
+        <origin>Los Angeles, California, USA</origin>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BridgingTheGap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BridgingTheGap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <genre>Hip hop</genre>
+        <name>Bridging the Gap</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elephunk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elephunk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/AMRecords"/>
+        <genre>Hip hop</genre>
+        <name>Elephunk</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2003</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elevation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elevation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/EpicRecords"/>
+        <genre>Pop</genre>
+        <name>Elevation</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/EpicRecords -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/EpicRecords">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <blackEyedPeas:workedWith rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elevation"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Translation"/>
+        <name>Epic Records</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist"/>
+        <blackEyedPeas:wasMemberOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <activeSince rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2002</activeSince>
+        <activeUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</activeUntil>
+        <birthdate>27.03.1975</birthdate>
+        <gender>Female</gender>
+        <isFounder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isFounder>
+        <name>Stacy Ann Ferguson</name>
+        <role>vocals</role>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Label"/>
+        <blackEyedPeas:workedWith rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BehindTheFront"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BridgingTheGap"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MastersOfTheSunVol1"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheBeginning"/>
+        <produced rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheEND"/>
+        <name>Interscope Records</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/J.ReySoul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/J.ReySoul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist"/>
+        <blackEyedPeas:isMemberOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <activeSince rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</activeSince>
+        <birthdate>12.07.1997</birthdate>
+        <gender>Female</gender>
+        <isFounder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isFounder>
+        <name>Jessica Joy Seria Reynoso</name>
+        <role>vocals</role>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/KimHill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/KimHill">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/FormerArtist"/>
+        <blackEyedPeas:wasMemberOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <activeSince rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1995</activeSince>
+        <activeUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</activeUntil>
+        <birthdate>07.08.1972</birthdate>
+        <gender>Female</gender>
+        <isFounder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isFounder>
+        <name>Kim Hill</name>
+        <role>vocals</role>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MastersOfTheSunVol1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MastersOfTheSunVol1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <genre>Hip hop</genre>
+        <name>Masters of the Sun Vol. 1</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MonkeyBusiness -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MonkeyBusiness">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/AMRecords"/>
+        <genre>Funk / Soul</genre>
+        <genre>Hip hop</genre>
+        <name>Monkey Business</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2005</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Taboo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Taboo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist"/>
+        <blackEyedPeas:isMemberOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <activeSince rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1995</activeSince>
+        <birthdate>14.07.1975</birthdate>
+        <gender>Male</gender>
+        <isFounder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isFounder>
+        <name>Jaime Luis Gómez</name>
+        <role>DJ</role>
+        <role>guitar</role>
+        <role>vocals</role>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheBeginning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheBeginning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <genre>Hip hop</genre>
+        <name>The Beginning</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheEND -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheEND">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/InterscopeRecords"/>
+        <genre>Electronic</genre>
+        <genre>Funk / Soul</genre>
+        <genre>Hip hop</genre>
+        <genre>Pop</genre>
+        <name>The E.N.D.</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2009</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Translation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Translation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Album"/>
+        <madeBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <producedBy rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/EpicRecords"/>
+        <genre>Hip hop</genre>
+        <genre>Latin</genre>
+        <genre>Pop</genre>
+        <name>Translation</name>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2020</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Will.i.am -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Will.i.am">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/ActiveArtist"/>
+        <blackEyedPeas:isMemberOf rdf:resource="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas"/>
+        <activeSince rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1995</activeSince>
+        <birthdate>15.03.1975</birthdate>
+        <gender>Male</gender>
+        <isFounder rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isFounder>
+        <name>William James Adams Jr.</name>
+        <role>bass</role>
+        <role>piano</role>
+        <role>synthesizer</role>
+        <role>vocals</role>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Apl.de.ap"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/J.ReySoul"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/KimHill"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Taboo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Will.i.am"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BehindTheFront"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BridgingTheGap"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elephunk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elevation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MastersOfTheSunVol1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/MonkeyBusiness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheBeginning"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheEND"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Translation"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

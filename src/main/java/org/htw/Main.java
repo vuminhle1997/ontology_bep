@@ -21,22 +21,60 @@ public class Main {
             Model model = ModelFactory.createMemModelMaker().createDefaultModel();
             model.read(in, null); // null base URI, since model URIs are absolute
             in.close();
+//            System.out.println(model);
 
             // Create a new query
             String queryString =
-                    "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
+                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
+                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
                             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
                             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
 
-                            "SELECT ?bandName ?albumTitle " +
+                            "SELECT * " +
                             "WHERE {" +
-                            "bep:BlackEyedPeas rdf:type bep:Band ; " +
-                            "bep:name ?bandName ; " +
-                            "bep:hasAlbum ?album . " +
-
-                            "?album rdf:type bep:Album ; " +
-                            "bep:name ?albumTitle . " +
+                            "?artist base:name ?x . " +
+                            "?artist bep:isMemberOf ?band ." +
+                            "?band base:name ?y ." +
+                            "FILTER(?y = \"Black Eyed Peas\")" +
                             "}";
+
+//            select active member
+//                    "SELECT * " +
+//                    "WHERE {" +
+//                    "?artist base:name ?x . " +
+//                    "?artist bep:isMemberOf ?band ." +
+//                    "?band base:name ?y ." +
+//                    "FILTER(?y = \"Black Eyed Peas\")" +
+//                    "}";
+
+//            select former member
+//                    "SELECT * " +
+//                    "WHERE {" +
+//                    "?artist base:name ?x . " +
+//                    "?artist bep:wasMemberOf ?band ." +
+//                    "?band base:name ?y ." +
+//                    "FILTER(?y = \"Black Eyed Peas\")" +
+//                    "}";
+
+//            select individual with name "Kim Hill"
+//                    "SELECT * " +
+//                    "WHERE {" +
+//                    "?name base:name ?x . " +
+//                    "FILTER(?x = \"Kim Hill\")" +
+//                    "}";
+
+//            select all individuals with gender "Female"
+//                    "SELECT * " +
+//                    "WHERE {" +
+//                    "?female base:gender \"Female\" . " +
+//                    "}";
+
+//            select all individuals that have the name property
+//                    "SELECT * " +
+//                    "WHERE {" +
+//                    "?name base:name ?x . " +
+//                    "}";
 
             Query query = QueryFactory.create(queryString);
 

@@ -33,10 +33,10 @@ public class Main {
 
                             "SELECT * " +
                             "WHERE {" +
-                            "?artist base:name ?x . " +
+                            "?artist base:name ?artistName . " +
                             "?artist bep:isMemberOf ?band ." +
-                            "?band base:name ?y ." +
-                            "FILTER(?y = \"Black Eyed Peas\")" +
+                            "?band base:name ?bandName ." +
+                            "FILTER(?bandName = \"Black Eyed Peas\")" +
                             "}";
 
 //            select active member

@@ -1,0 +1,7 @@
+select former members
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| artistURI                                                                         | artistName           | bandURI                                                                                 | bandName          |
+==========================================================================================================================================================================================================================
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie>  | "Stacy Ann Ferguson" | <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas> | "Black Eyed Peas" |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/KimHill> | "Kim Hill"           | <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas> | "Black Eyed Peas" |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

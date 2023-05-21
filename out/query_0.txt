@@ -1,0 +1,9 @@
+select active members
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| artistURI                                                                           | artistName                  | bandURI                                                                                 | bandName          |
+===================================================================================================================================================================================================================================
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Will.i.am> | "William James Adams Jr."   | <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas> | "Black Eyed Peas" |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Apl.de.ap> | "Allen Pineda Lindo"        | <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas> | "Black Eyed Peas" |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Taboo>     | "Jaime Luis Gómez"          | <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas> | "Black Eyed Peas" |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/J.ReySoul> | "Jessica Joy Seria Reynoso" | <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/BlackEyedPeas> | "Black Eyed Peas" |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

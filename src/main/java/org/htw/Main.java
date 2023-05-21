@@ -4,12 +4,12 @@ import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 
 public class Main {
+	private static Logger logger = Logger.getLogger(Main.class);
 	public static void main(String[] args) {
 		BasicConfigurator.configure();
 
@@ -172,7 +172,7 @@ public class Main {
 
 			runQueries(queries, queryDescriptions, model);
 		} catch (Exception e) {
-			System.out.println(e.toString());
+			logger.error(e);
 		}
 	}
 
@@ -186,10 +186,20 @@ public class Main {
 
 			// Output query description
 			String queryDescription = queryDescriptions[i];
-			System.out.println(queryDescription);
-
 			// Output query results
-			ResultSetFormatter.out(System.out, results, query);
+			try {
+				BufferedWriter textWriter = new BufferedWriter(new FileWriter(String.format("./out/query_%d.txt",i)));
+
+				// write output to file
+				String queryOutput = queryDescription + "\n" + ResultSetFormatter.asText(results);
+				textWriter.write(queryOutput);
+				textWriter.close();
+
+				// print results to terminal
+				System.out.println(queryOutput);
+			} catch (IOException e) {
+				logger.error(e);
+			}
 
 			// Important ‑ free up resources used running the query
 			qe.close();

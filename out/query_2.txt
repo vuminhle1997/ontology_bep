@@ -1,0 +1,11 @@
+select members with role "vocals"
+----------------------------------------------------------------------------------------------------------------------------------
+| artistURI                                                                           | artistName                  | artistRole |
+==================================================================================================================================
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Will.i.am> | "William James Adams Jr."   | "vocals"   |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Taboo>     | "Jaime Luis Gómez"          | "vocals"   |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/KimHill>   | "Kim Hill"                  | "vocals"   |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/J.ReySoul> | "Jessica Joy Seria Reynoso" | "vocals"   |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie>    | "Stacy Ann Ferguson"        | "vocals"   |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Apl.de.ap> | "Allen Pineda Lindo"        | "vocals"   |
+----------------------------------------------------------------------------------------------------------------------------------

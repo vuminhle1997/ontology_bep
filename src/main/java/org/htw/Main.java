@@ -108,7 +108,7 @@ public class Main {
 							"}";
 
 			// album queries
-			String queryDescription7 = "select all albums released when \"Fergie\" was in the Band ";
+			String queryDescription7 = "select all albums released when \"Fergie\" was in the Band";
 			String queryString7 =
 					prefixString +
 							"SELECT ?artistURI ?artistName ?albumName ?releaseYear " +
@@ -120,7 +120,8 @@ public class Main {
 							"?artistURI base:activeUntil ?activeUntil . " +
 							"FILTER(?releaseYear > ?activeSince && ?releaseYear < ?activeUntil)" +
 							"FILTER(?artistURI = base:Fergie)" +
-							"}";
+							"}" +
+							"ORDER BY ASC(?releaseYear)";
 
 			String queryDescription8 = "select all albums of Black Eyed Peas with genre \"Pop\"";
 			String queryString8 =

@@ -23,15 +23,19 @@ public class Main {
             in.close();
 //            System.out.println(model);
 
-            // Create new queries
-            String queryDescription1 = "select active members";
-            String queryString1 =
+            String prefixString =
                     "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
                             "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
                             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
                             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>";
 
+
+            // Create new queries
+            // artist queries
+            String queryDescription1 = "select active members";
+            String queryString1 =
+                    prefixString +
                             "SELECT * " +
                             "WHERE {" +
                             "?artistURI base:name ?artistName . " +
@@ -42,12 +46,7 @@ public class Main {
 
             String queryDescription2 = "select former members";
             String queryString2 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-
+                    prefixString +
                             "SELECT * " +
                             "WHERE {" +
                             "?artistURI base:name ?artistName . " +
@@ -56,14 +55,19 @@ public class Main {
                             "FILTER(?bandName = \"Black Eyed Peas\")" +
                             "}";
 
-            String queryDescription3 = "select individual with name \"Kim Hill\"";
+            String queryDescription3 = "select members with role \"vocals\"";
             String queryString3 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+                    prefixString +
+                            "SELECT ?artistURI ?artistName ?artistRole " +
+                            "WHERE {" +
+                            "?artistURI base:name ?artistName . " +
+                            "?artistURI base:role ?artistRole . " +
+                            "FILTER(?artistRole = \"vocals\")" +
+                            "}";
 
+            String queryDescription4 = "select individual with name \"Kim Hill\"";
+            String queryString4 =
+                    prefixString +
                             "SELECT ?name ?activeSince ?activeUntil ?role ?isFounder ?gender ?birthdate " +
                             "WHERE {" +
                             "?artistURI base:name ?artistName . " +
@@ -77,14 +81,9 @@ public class Main {
                             "FILTER(?artistName = \"Kim Hill\")" +
                             "}";
 
-            String queryDescription4 = "select all individuals with gender \"Female\" that are still active in the band";
-            String queryString4 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-
+            String queryDescription5 = "select all individuals with gender \"Female\" that are still active in the band";
+            String queryString5 =
+                    prefixString +
                             "SELECT ?artistURI ?artistName ?gender " +
                             "WHERE {" +
                             "?artistURI base:name ?artistName . " +
@@ -95,14 +94,9 @@ public class Main {
                             "FILTER(?gender = \"Female\")" +
                             "}";
 
-            String queryDescription5 = "select all individuals with gender \"Female\" that are not active in the band anymore";
-            String queryString5 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-
+            String queryDescription6 = "select all individuals with gender \"Female\" that are not active in the band anymore";
+            String queryString6 =
+                    prefixString +
                             "SELECT ?artistURI ?artistName ?gender " +
                             "WHERE {" +
                             "?artistURI base:name ?artistName . " +
@@ -113,11 +107,40 @@ public class Main {
                             "FILTER(?gender = \"Female\")" +
                             "}";
 
-//            select all individuals that have the name property
-//                    "SELECT * " +
-//                    "WHERE {" +
-//                    "?name base:name ?x . " +
-//                    "}";
+            // album queries
+            String queryDescription7 = "select all albums with genre \"Pop\"";
+            String queryString7 =
+                    prefixString +
+                            "SELECT ?albumURI ?albumName ?genre " +
+                            "WHERE {" +
+                            "?albumURI base:name ?albumName . " +
+                            "?albumURI base:genre ?genre . " +
+                            "FILTER(?genre = \"Pop\")" +
+                            "}";
+
+            String queryDescription8 = "select all Black Eyed Peas albums that were released after 2009";
+            String queryString8 =
+                    prefixString +
+                            "SELECT ?albumURI ?albumName ?releaseYear " +
+                            "WHERE {" +
+                            "?albumURI base:name ?albumName . " +
+                            "?albumURI base:releaseYear ?releaseYear . " +
+                            "FILTER(?releaseYear > 2009) ." +
+                            "}" +
+                            "ORDER BY ASC(?releaseYear)" ;
+
+
+            // label queries
+            String queryDescription9 = "select all albums that were produced by \"Interscope Records\"";
+            String queryString9 =
+                    prefixString +
+                            "SELECT ?albumURI ?albumName ?labelURI ?labelName " +
+                            "WHERE {" +
+                            "?albumURI base:name ?albumName . " +
+                            "?albumURI base:producedBy ?labelURI ." +
+                            "?labelURI base:name ?labelName ." +
+                            "FILTER(?labelName = \"Interscope Records\")" +
+                            "}";
 
             Query[] queries = {
                     QueryFactory.create(queryString1),
@@ -125,11 +148,17 @@ public class Main {
                     QueryFactory.create(queryString3),
                     QueryFactory.create(queryString4),
                     QueryFactory.create(queryString5),
+                    QueryFactory.create(queryString6),
+                    QueryFactory.create(queryString7),
+                    QueryFactory.create(queryString8),
+                    QueryFactory.create(queryString9),
             };
             String[] queryDescriptions = {
                     queryDescription1, queryDescription2,
                     queryDescription3, queryDescription4,
-                    queryDescription5,
+                    queryDescription5, queryDescription6,
+                    queryDescription7, queryDescription8,
+                    queryDescription9,
             };
 
             runQueries(queries, queryDescriptions, model);

@@ -15,7 +15,7 @@ public class Main {
 
         // Open the Black Eyed Peas RDF graph from the filesystem
         try {
-            InputStream in = new FileInputStream(new File("./rdf/BlackEyedPeas-v1.rdf"));
+			InputStream in = new FileInputStream(new File("./rdf/BlackEyedPeas-v1.rdf"));
 
             // Create an empty in‑memory model and populate it from the graph
             Model model = ModelFactory.createMemModelMaker().createDefaultModel();
@@ -113,6 +113,58 @@ public class Main {
                             "FILTER(?gender = \"Female\")" +
                             "}";
 
+			String queryDescription6 = "select all albums of Black Eyed Peas with \"Pop\" genre";
+			String queryString6 =
+				"PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
+					"PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
+					"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+					"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+					"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+
+					"SELECT ?albumName ?releaseYear ?genre " +
+					"WHERE {" +
+					"?albumURI base:name ?albumName . " +
+					"?albumURI base:releaseYear ?releaseYear . " +
+					"?albumURI base:genre ?genre . " +
+					"FILTER(?genre = \"Pop\")" +
+					"}";
+			String queryDescription7 = "select all albums produced by \"InterscopeRecords\" after 2009 ";
+			String queryString7 =
+				"PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
+					"PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
+					"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+					"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+					"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+
+					"SELECT ?albumName ?labelName ?releaseYear ?genre " +
+					"WHERE {" +
+					"?albumURI base:name ?albumName . " +
+					"?albumURI base:genre ?genre . " +
+					"?albumURI base:producedBy ?labelURI ." +
+					"?albumURI base:releaseYear ?releaseYear . " +
+					"?labelURI base:name ?labelName ." +
+					"FILTER(?releaseYear > 2009)" +
+					"FILTER(?labelName = \"Interscope Records\")" +
+					"}";
+
+			String queryDescription8 = "select all albums released when \"Fergie\" was in the Band ";
+			String queryString8 =
+				"PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
+					"PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
+					"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+					"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+					"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+
+					"SELECT ?albumName ?releaseYear " +
+					"WHERE {" +
+					"?albumURI base:name ?albumName . " +
+					"?albumURI base:releaseYear ?releaseYear . " +
+					"?artistURI base:activeSince ?activeSince . " +
+					"?artistURI base:activeUntil ?activeUntil . " +
+					"FILTER(?releaseYear > ?activeSince && ?releaseYear < ?activeUntil)" +
+					"FILTER(?artistURI = base:Fergie)" +
+					"}";
+
 //            select all individuals that have the name property
 //                    "SELECT * " +
 //                    "WHERE {" +
@@ -125,11 +177,15 @@ public class Main {
                     QueryFactory.create(queryString3),
                     QueryFactory.create(queryString4),
                     QueryFactory.create(queryString5),
-            };
+					QueryFactory.create(queryString6),
+					QueryFactory.create(queryString7),
+					QueryFactory.create(queryString8),
+			};
             String[] queryDescriptions = {
                     queryDescription1, queryDescription2,
                     queryDescription3, queryDescription4,
-                    queryDescription5,
+                    queryDescription5,queryDescription6,
+					queryDescription7,queryDescription8
             };
 
             runQueries(queries, queryDescriptions, model);

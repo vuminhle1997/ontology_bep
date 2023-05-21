@@ -10,151 +10,188 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 public class Main {
-    public static void main(String[] args) {
-        BasicConfigurator.configure();
+	public static void main(String[] args) {
+		BasicConfigurator.configure();
 
-        // Open the Black Eyed Peas RDF graph from the filesystem
-        try {
-            InputStream in = new FileInputStream(new File("./rdf/BlackEyedPeas-v1.rdf"));
+		// Open the Black Eyed Peas RDF graph from the filesystem
+		try {
+			InputStream in = new FileInputStream(new File("./rdf/BlackEyedPeas-v1.rdf"));
 
-            // Create an empty in‑memory model and populate it from the graph
-            Model model = ModelFactory.createMemModelMaker().createDefaultModel();
-            model.read(in, null); // null base URI, since model URIs are absolute
-            in.close();
+			// Create an empty in‑memory model and populate it from the graph
+			Model model = ModelFactory.createMemModelMaker().createDefaultModel();
+			model.read(in, null); // null base URI, since model URIs are absolute
+			in.close();
 //            System.out.println(model);
 
-            // Create new queries
-            String queryDescription1 = "select active members";
-            String queryString1 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+			String prefixString =
+					"PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
+							"PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
+							"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+							"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+							"PREFIX owl: <http://www.w3.org/2002/07/owl#>";
 
-                            "SELECT * " +
-                            "WHERE {" +
-                            "?artistURI base:name ?artistName . " +
-                            "?artistURI bep:isMemberOf ?bandURI ." +
-                            "?bandURI base:name ?bandName ." +
-                            "FILTER(?bandName = \"Black Eyed Peas\")" +
-                            "}";
 
-            String queryDescription2 = "select former members";
-            String queryString2 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+			// Create new queries
+			// artist queries
+			String queryDescription1 = "select active members";
+			String queryString1 =
+					prefixString +
+							"SELECT * " +
+							"WHERE {" +
+							"?artistURI base:name ?artistName . " +
+							"?artistURI bep:isMemberOf ?bandURI ." +
+							"?bandURI base:name ?bandName ." +
+							"FILTER(?bandName = \"Black Eyed Peas\")" +
+							"}";
 
-                            "SELECT * " +
-                            "WHERE {" +
-                            "?artistURI base:name ?artistName . " +
-                            "?artistURI bep:wasMemberOf ?bandURI ." +
-                            "?bandURI base:name ?bandName ." +
-                            "FILTER(?bandName = \"Black Eyed Peas\")" +
-                            "}";
+			String queryDescription2 = "select former members";
+			String queryString2 =
+					prefixString +
+							"SELECT * " +
+							"WHERE {" +
+							"?artistURI base:name ?artistName . " +
+							"?artistURI bep:wasMemberOf ?bandURI ." +
+							"?bandURI base:name ?bandName ." +
+							"FILTER(?bandName = \"Black Eyed Peas\")" +
+							"}";
 
-            String queryDescription3 = "select individual with name \"Kim Hill\"";
-            String queryString3 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+			String queryDescription3 = "select members with role \"vocals\"";
+			String queryString3 =
+					prefixString +
+							"SELECT ?artistURI ?artistName ?artistRole " +
+							"WHERE {" +
+							"?artistURI base:name ?artistName . " +
+							"?artistURI base:role ?artistRole . " +
+							"FILTER(?artistRole = \"vocals\")" +
+							"}";
 
-                            "SELECT ?name ?activeSince ?activeUntil ?role ?isFounder ?gender ?birthdate " +
-                            "WHERE {" +
-                            "?artistURI base:name ?artistName . " +
-                            "?artistURI base:name ?name ." +
-                            "?artistURI base:activeSince ?activeSince ." +
-                            "?artistURI base:activeUntil ?activeUntil ." +
-                            "?artistURI base:role ?role ." +
-                            "?artistURI base:isFounder ?isFounder ." +
-                            "?artistURI base:gender ?gender ." +
-                            "?artistURI base:birthdate ?birthdate ." +
-                            "FILTER(?artistName = \"Kim Hill\")" +
-                            "}";
+			String queryDescription4 = "select individual with name \"Kim Hill\"";
+			String queryString4 =
+					prefixString +
+							"SELECT ?name ?activeSince ?activeUntil ?role ?isFounder ?gender ?birthdate " +
+							"WHERE {" +
+							"?artistURI base:name ?artistName . " +
+							"?artistURI base:name ?name ." +
+							"?artistURI base:activeSince ?activeSince ." +
+							"?artistURI base:activeUntil ?activeUntil ." +
+							"?artistURI base:role ?role ." +
+							"?artistURI base:isFounder ?isFounder ." +
+							"?artistURI base:gender ?gender ." +
+							"?artistURI base:birthdate ?birthdate ." +
+							"FILTER(?artistName = \"Kim Hill\")" +
+							"}";
 
-            String queryDescription4 = "select all individuals with gender \"Female\" that are still active in the band";
-            String queryString4 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+			String queryDescription5 = "select all individuals with gender \"Female\" that are still active in the band";
+			String queryString5 =
+					prefixString +
+							"SELECT ?artistURI ?artistName ?gender " +
+							"WHERE {" +
+							"?artistURI base:name ?artistName . " +
+							"?artistURI bep:isMemberOf ?bandURI ." +
+							"?artistURI base:gender ?gender . " +
+							"?bandURI base:name ?bandName ." +
+							"FILTER(?bandName = \"Black Eyed Peas\")" +
+							"FILTER(?gender = \"Female\")" +
+							"}";
 
-                            "SELECT ?artistURI ?artistName ?gender " +
-                            "WHERE {" +
-                            "?artistURI base:name ?artistName . " +
-                            "?artistURI bep:isMemberOf ?bandURI ." +
-                            "?artistURI base:gender ?gender . " +
-                            "?bandURI base:name ?bandName ." +
-                            "FILTER(?bandName = \"Black Eyed Peas\")" +
-                            "FILTER(?gender = \"Female\")" +
-                            "}";
+			String queryDescription6 = "select all individuals with gender \"Female\" that are not active in the band anymore";
+			String queryString6 =
+					prefixString +
+							"SELECT ?artistURI ?artistName ?gender " +
+							"WHERE {" +
+							"?artistURI base:name ?artistName . " +
+							"?artistURI bep:wasMemberOf ?bandURI ." +
+							"?artistURI base:gender ?gender . " +
+							"?bandURI base:name ?bandName ." +
+							"FILTER(?bandName = \"Black Eyed Peas\")" +
+							"FILTER(?gender = \"Female\")" +
+							"}";
 
-            String queryDescription5 = "select all individuals with gender \"Female\" that are not active in the band anymore";
-            String queryString5 =
-                    "PREFIX base: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/> " +
-                            "PREFIX bep: <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas#> " +
-                            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-                            "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+			// album queries
+			String queryDescription7 = "select all albums released when \"Fergie\" was in the Band ";
+			String queryString7 =
+					prefixString +
+							"SELECT ?artistURI ?artistName ?albumName ?releaseYear " +
+							"WHERE {" +
+							"?albumURI base:name ?albumName . " +
+							"?albumURI base:releaseYear ?releaseYear . " +
+							"?artistURI base:name ?artistName . " +
+							"?artistURI base:activeSince ?activeSince . " +
+							"?artistURI base:activeUntil ?activeUntil . " +
+							"FILTER(?releaseYear > ?activeSince && ?releaseYear < ?activeUntil)" +
+							"FILTER(?artistURI = base:Fergie)" +
+							"}";
 
-                            "SELECT ?artistURI ?artistName ?gender " +
-                            "WHERE {" +
-                            "?artistURI base:name ?artistName . " +
-                            "?artistURI bep:wasMemberOf ?bandURI ." +
-                            "?artistURI base:gender ?gender . " +
-                            "?bandURI base:name ?bandName ." +
-                            "FILTER(?bandName = \"Black Eyed Peas\")" +
-                            "FILTER(?gender = \"Female\")" +
-                            "}";
+			String queryDescription8 = "select all albums of Black Eyed Peas with genre \"Pop\"";
+			String queryString8 =
+					prefixString +
+							"SELECT ?albumURI ?albumName ?genre ?releaseYear " +
+							"WHERE {" +
+							"?albumURI base:name ?albumName . " +
+							"?albumURI base:releaseYear ?releaseYear . " +
+							"?albumURI base:genre ?genre . " +
+							"FILTER(?genre = \"Pop\")" +
+							"}" +
+							"ORDER BY ASC(?releaseYear)";
 
-//            select all individuals that have the name property
-//                    "SELECT * " +
-//                    "WHERE {" +
-//                    "?name base:name ?x . " +
-//                    "}";
+			// label queries
+			String queryDescription9 = "select all albums produced by \"Interscope Records\" after 2009 ";
+			String queryString9 =
+					prefixString +
+							"SELECT ?albumName ?labelName ?releaseYear ?genre " +
+							"WHERE {" +
+							"?albumURI base:name ?albumName . " +
+							"?albumURI base:genre ?genre . " +
+							"?albumURI base:producedBy ?labelURI ." +
+							"?albumURI base:releaseYear ?releaseYear . " +
+							"?labelURI base:name ?labelName ." +
+							"FILTER(?releaseYear > 2009)" +
+							"FILTER(?labelName = \"Interscope Records\")" +
+							"}" +
+							"ORDER BY ASC(?releaseYear)";
 
-            Query[] queries = {
-                    QueryFactory.create(queryString1),
-                    QueryFactory.create(queryString2),
-                    QueryFactory.create(queryString3),
-                    QueryFactory.create(queryString4),
-                    QueryFactory.create(queryString5),
-            };
-            String[] queryDescriptions = {
-                    queryDescription1, queryDescription2,
-                    queryDescription3, queryDescription4,
-                    queryDescription5,
-            };
+			Query[] queries = {
+					QueryFactory.create(queryString1),
+					QueryFactory.create(queryString2),
+					QueryFactory.create(queryString3),
+					QueryFactory.create(queryString4),
+					QueryFactory.create(queryString5),
+					QueryFactory.create(queryString6),
+					QueryFactory.create(queryString7),
+					QueryFactory.create(queryString8),
+					QueryFactory.create(queryString9),
+			};
+			String[] queryDescriptions = {
+					queryDescription1, queryDescription2,
+					queryDescription3, queryDescription4,
+					queryDescription5, queryDescription6,
+					queryDescription7, queryDescription8,
+					queryDescription9,
+			};
 
-            runQueries(queries, queryDescriptions, model);
-        } catch (Exception e) {
-            System.out.println(e.toString());
-        }
-    }
+			runQueries(queries, queryDescriptions, model);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+	}
 
-    public static void runQueries(Query[] queries, String[] queryDescriptions, Model model) {
-        for (int i = 0; i < queries.length; i++) {
-            Query query = queries[i];
+	public static void runQueries(Query[] queries, String[] queryDescriptions, Model model) {
+		for (int i = 0; i < queries.length; i++) {
+			Query query = queries[i];
 
-            // Execute the query and obtain results
-            QueryExecution qe = QueryExecutionFactory.create(query, model);
-            ResultSet results = qe.execSelect();
+			// Execute the query and obtain results
+			QueryExecution qe = QueryExecutionFactory.create(query, model);
+			ResultSet results = qe.execSelect();
 
-            // Output query description
-            String queryDescription = queryDescriptions[i];
-            System.out.println(queryDescription);
+			// Output query description
+			String queryDescription = queryDescriptions[i];
+			System.out.println(queryDescription);
 
-            // Output query results
-            ResultSetFormatter.out(System.out, results, query);
+			// Output query results
+			ResultSetFormatter.out(System.out, results, query);
 
-            // Important ‑ free up resources used running the query
-            qe.close();
-        }
-    }
+			// Important ‑ free up resources used running the query
+			qe.close();
+		}
+	}
 }

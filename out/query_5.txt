@@ -1,0 +1,7 @@
+select all individuals with gender "Female" that are not active in the band anymore
+-----------------------------------------------------------------------------------------------------------------------
+| artistURI                                                                         | artistName           | gender   |
+=======================================================================================================================
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/KimHill> | "Kim Hill"           | "Female" |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie>  | "Stacy Ann Ferguson" | "Female" |
+-----------------------------------------------------------------------------------------------------------------------

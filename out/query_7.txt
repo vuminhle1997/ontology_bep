@@ -1,0 +1,8 @@
+select all albums of Black Eyed Peas with genre "Pop"
+-------------------------------------------------------------------------------------------------------------------------------
+| albumURI                                                                              | albumName     | genre | releaseYear |
+===============================================================================================================================
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/TheEND>      | "The E.N.D."  | "Pop" | 2009        |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Translation> | "Translation" | "Pop" | 2020        |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Elevation>   | "Elevation"   | "Pop" | 2022        |
+-------------------------------------------------------------------------------------------------------------------------------

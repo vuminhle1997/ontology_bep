@@ -1,0 +1,9 @@
+select all albums released when "Fergie" was in the Band
+---------------------------------------------------------------------------------------------------------------------------------------------
+| artistURI                                                                        | artistName           | albumName         | releaseYear |
+=============================================================================================================================================
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie> | "Stacy Ann Ferguson" | "Elephunk"        | 2003        |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie> | "Stacy Ann Ferguson" | "Monkey Business" | 2005        |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie> | "Stacy Ann Ferguson" | "The E.N.D."      | 2009        |
+| <http://www.semanticweb.org/aminesellami/ontologies/2023/4/blackEyedPeas/Fergie> | "Stacy Ann Ferguson" | "The Beginning"   | 2010        |
+---------------------------------------------------------------------------------------------------------------------------------------------
